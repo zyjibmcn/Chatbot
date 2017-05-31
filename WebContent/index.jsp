@@ -72,7 +72,7 @@
 			<div class="_content--data">
 				<div class="tab-panels" role="tabpanel">
 					<ul class="tab-panels--tab-list" role="tablist">
-						<li class="tab-panels--tab-list-item base-li" role="presentation">
+						<li class="tab-panels--tab-list-item base-li active" role="presentation">
 							<a class="tab-panels--tab base--a" href="#json-panel" aria-controls="json" role="tab">JSON</a>
 						</li>
 					</ul>
