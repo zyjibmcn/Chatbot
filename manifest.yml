@@ -5,5 +5,5 @@ applications:
   buildpack: liberty-for-java
   env:
     JVM: openjdk
-    CONVERSATION_WORKSPACE_ID: 6d499243-66f4-4667-a98c-9ab34108982f
+    CONVERSATION_WORKSPACE_ID: c0abbd75-6da0-49a6-bb34-ce3b5097acb7
     CAR_SERVICE_HOST: IOTCar-yunjiez.mybluemix.net
