@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Talk to Watson</title>
+<title>Shopz Order Assistant</title>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="css/ionicons.min.css" />
 <link rel="stylesheet" href="css/style.css" />
-<script>
-	var carServiceHost = '<%=com.ibm.cto.Configuration.getInstance().CAR_SERVICE_HOST %>';
-</script>
 </head>
 <body>
 	<header class="_demo--heading">
 		<div class="_demo--container">
 			<a class="wordmark" href="index.jsp">
-				<span class="wordmark--left">Talk to</span>
-				<span class="wordmark--right">Watson</span>
+				<span class="wordmark--left">Shopz Order</span>
+				<span class="wordmark--right">Assistant</span>
 			</a>
 			
 			<!--nav class="heading-nav">
@@ -68,23 +65,8 @@
 					<input type="button" value="Speak" class="base--button ui-button-microphone" />
 				</div>
 			</div>
-
-			<div class="_content--data">
-				<div class="tab-panels" role="tabpanel">
-					<ul class="tab-panels--tab-list" role="tablist">
-						<li class="tab-panels--tab-list-item base-li active" role="presentation">
-							<a class="tab-panels--tab base--a" href="#json-panel" aria-controls="json" role="tab">JSON</a>
-						</li>
-					</ul>
-					<div class="tab-panels--tab-content">
-						<div id="json-panel" class="tab-panels--tab-pane" role="tab-panel">
-							<textarea class="base--textarea"></textarea>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="ui-transcription"></div>
+<!--  
+			<div class="ui-transcription"></div> -->
 		</article>
 
 	</div>
