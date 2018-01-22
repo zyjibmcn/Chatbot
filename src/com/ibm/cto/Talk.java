@@ -1,6 +1,7 @@
 package com.ibm.cto;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.annotation.WebServlet;
@@ -59,6 +60,9 @@ public class Talk extends HttpServlet {
 		MessageRequest newMessage = new MessageRequest.Builder().context(contextMap).inputText(requestMessage).build();
 
 		MessageResponse r = service.message(Configuration.getInstance().CONVERSATION_WORKSPACE_ID, newMessage).execute();
+		
+		// add post processing logic for shopz order status/stats query
+		ShopzOrderUtils.postConversationProcess(r);
 
 		response.getWriter().append(r.toString());
 	}

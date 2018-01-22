@@ -1,6 +1,9 @@
 package com.ibm.cto;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
@@ -15,6 +18,7 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
+import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.fluent.Executor;
@@ -29,6 +33,7 @@ import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
+import org.apache.http.util.EntityUtils;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -133,5 +138,45 @@ public class Utility {
 	        map.put(key, value);
 	    }
 	    return map;
+	}
+	
+	public static HttpEntity invokeRequest(String serviceUrl) throws Exception
+	{
+	     if(serviceUrl.length() > 0) {
+           URI converseURI = new URI(serviceUrl).normalize();
+           Request request = Request.Get(converseURI);
+           HttpResponse httpResponse = Utility.invokeRequest(request, "", "", true);
+           if(httpResponse.getStatusLine().getStatusCode() == 200){
+               HttpEntity entity = httpResponse.getEntity();
+               return entity;
+           }
+	     }
+         throw new Exception("Invalid request serviceUrl");
+	}
+	
+	public static String convertHttpEntityToString(HttpEntity entity)
+	{
+	  String result = "";
+	  
+	  InputStream inputStream;
+      try {
+          inputStream = entity.getContent();
+          if(inputStream != null) {
+              if(inputStream.available() > 0) {
+                  byte[] buffer = new byte[4096];
+                  int length = 0;
+                  StringBuilder sb = new StringBuilder();
+                  while((length = inputStream.read(buffer)) > 0) {
+                      sb.append(new String(buffer, 0, length));
+                  }
+                  result = sb.toString();
+              }
+              inputStream.close();
+          }
+      } catch (IllegalStateException | IOException e) {
+          e.printStackTrace();
+      }
+      
+	  return result;
 	}
 }
