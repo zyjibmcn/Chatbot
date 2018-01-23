@@ -9,7 +9,7 @@ import com.ibm.watson.developer_cloud.conversation.v1.model.MessageResponse;
 
 public class ShopzOrderUtils
 {
-  private static final String URL_ORDER_STATUS_QUERY = "https://9.125.141.233:9443/resttest/api/hello";
+  private static final String URL_ORDER_STATUS_QUERY = "https://cap-sg-prd-4.integration.ibmcloud.com:17273/resttest/api/hello";
   
   private static final String URL_ORDER_STATS_QUERY = "";
   
