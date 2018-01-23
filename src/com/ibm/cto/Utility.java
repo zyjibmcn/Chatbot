@@ -30,6 +30,7 @@ import org.apache.http.conn.socket.ConnectionSocketFactory;
 import org.apache.http.conn.socket.PlainConnectionSocketFactory;
 import org.apache.http.conn.ssl.NoopHostnameVerifier;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.entity.ContentType;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
@@ -153,6 +154,21 @@ public class Utility {
 	     }
          throw new Exception("Invalid request serviceUrl");
 	}
+	
+	public static HttpEntity invokePostRequest(String serviceUrl, String bodyJson) throws Exception
+    {
+         if(serviceUrl.length() > 0) {
+           URI converseURI = new URI(serviceUrl).normalize();
+           Request request = Request.Post(converseURI);
+           request.bodyString(bodyJson, ContentType.APPLICATION_JSON);
+           HttpResponse httpResponse = Utility.invokeRequest(request, "", "", true);
+           if(httpResponse.getStatusLine().getStatusCode() == 200){
+               HttpEntity entity = httpResponse.getEntity();
+               return entity;
+           }
+         }
+         throw new Exception("Invalid request serviceUrl");
+    }
 	
 	public static String convertHttpEntityToString(HttpEntity entity)
 	{
