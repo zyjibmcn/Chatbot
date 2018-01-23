@@ -1,7 +1,6 @@
-package com.ibm.cto;
+package com.ibm.cio.hackthon;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.annotation.WebServlet;

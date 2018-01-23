@@ -8,9 +8,7 @@
 <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="css/ionicons.min.css" />
 <link rel="stylesheet" href="css/style.css" />
-<script>
-	var carServiceHost = '<%=com.ibm.cto.Configuration.getInstance().CAR_SERVICE_HOST %>';
-</script>
+<link rel="stylesheet" href="css/style0.css" />
 </head>
 <body>
 	<header class="_demo--heading">
@@ -69,27 +67,11 @@
 				</div>
 			</div>
 
-			<div class="_content--data">
-				<div class="tab-panels" role="tabpanel">
-					<ul class="tab-panels--tab-list" role="tablist">
-						<li class="tab-panels--tab-list-item base-li active" role="presentation">
-							<a class="tab-panels--tab base--a" href="#json-panel" aria-controls="json" role="tab">JSON</a>
-						</li>
-					</ul>
-					<div class="tab-panels--tab-content">
-						<div id="json-panel" class="tab-panels--tab-pane" role="tab-panel">
-							<textarea class="base--textarea"></textarea>
-						</div>
-					</div>
-				</div>
-			</div>
-
 			<div class="ui-transcription"></div>
 		</article>
 
 	</div>
 	<script src="js/jquery-3.1.1.min.js"></script>
-	<script src="js/socket.io-1.3.7.js"></script>
 	<script src="js/watson-speech.js"></script>
   	<script src="js/talk-to-watson.js"></script>
 </body>

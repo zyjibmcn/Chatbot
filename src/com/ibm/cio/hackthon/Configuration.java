@@ -1,4 +1,4 @@
-package com.ibm.cto;
+package com.ibm.cio.hackthon;
 
 import java.util.Set;
 
@@ -19,9 +19,6 @@ public class Configuration {
 	public String CONVERSATION_API_URL = "https://gateway.watsonplatform.net/conversation/api";
 
 	/**
-	 * TODO: If you're testing this application locally, please get the credentials from Bluemix
-	 */
-	/**
      * TODO: If you're testing this application locally, please get the credentials from Bluemix
      */
     public String TEXT_TO_SPEECH_USERNAME = "fde1b7a4-80e6-4db0-908e-1fafb0e508ce";
@@ -30,18 +27,13 @@ public class Configuration {
     public String SPEECH_TO_TEXT_USERNAME = "b7d9886d-af8d-4fda-b9fe-882ea0eb1424";
     public String SPEECH_TO_TEXT_PASSWORD = "7zr7n8298eDv";
 
-    public String CONVERSATION_USERNAME = "b5227d2b-11e9-429f-9ac6-49c84016850a";
-    public String CONVERSATION_PASSWORD = "dV07oc8J1gIz";
+    public String CONVERSATION_USERNAME = "33123846-ed39-4847-97bd-72c67aeb77cd";
+    public String CONVERSATION_PASSWORD = "emXKD2aStE0i";
 
 	/**
 	 * TODO: Get Workspace ID from IBM Watson Conversation: https://ibmwatsonconversation.com
 	 */
 	public String CONVERSATION_WORKSPACE_ID = "";
-
-	/**
-	 * TODO: After deploy your nodejs service for controlling robot car, fill in the host name here
-	 */
-	public String CAR_SERVICE_HOST = "";
 
 	/**
 	 * Load credentials and URLs
@@ -59,15 +51,7 @@ public class Configuration {
 			}
 			else {
 				instance.CONVERSATION_WORKSPACE_ID = CONVERSATION_WORKSPACE_STRING;
-				instance.CAR_SERVICE_HOST = CAR_SERVICE_HOST_STRING;
 			}
-
-			System.out.println("### Conversation Workspace ID ###");
-			System.out.println(instance.CONVERSATION_WORKSPACE_ID);
-			System.out.println("### /Conversation Workspace ID ###");
-			System.out.println("### Car Host ###");
-			System.out.println(instance.CAR_SERVICE_HOST);
-			System.out.println("### /Car Host ###");
 
 			JSONObject vcapConfig = getObjectSettings("VCAP_SERVICES");
 

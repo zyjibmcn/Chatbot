@@ -6,4 +6,3 @@ applications:
   env:
     JVM: openjdk
     CONVERSATION_WORKSPACE_ID: 0722455c-f039-461d-9744-9efd144d7707
-    CAR_SERVICE_HOST: IOTCar-yunjiez.mybluemix.net
